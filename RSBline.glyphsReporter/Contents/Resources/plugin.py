@@ -55,7 +55,7 @@ class showRSB(ReporterPlugin):
 	@objc.python_method
 	def italo(self, yPos, angle, xHeight):
 		'''
-		ITALIC OFFSET
+		ITALIC OFFSET. TAKEN FROM MARK FROMBERG'S SMART PLUMBLINES
 		'''
 		offset = tan(radians(angle)) * xHeight/2
 		shift = tan(radians(angle)) * yPos - offset
