@@ -13,17 +13,17 @@
 	<key>CFBundleName</key>
 	<string>RSB line</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string> <!-- 1.0 -->
+	<string>1.0.1</string> <!-- 1.0 -->
 	<key>CFBundleVersion</key>
-	<string>1.0</string> <!-- 123 -->
+	<string>2</string> <!-- 123 -->
 	<key>UpdateFeedURL</key>
-	<string>____OnlineUrlToThisPlist____</string>
+	<string>https://raw.githubusercontent.com/akufadhl/RSBline/master/RSBline.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
-	<string>____ProductPageURL____</string>
+	<string>https://github.com/akufadhl/RSBline</string>
 	<key>productReleaseNotes</key>
-	<string>____LatestReleaseNotes____</string>
+	<string>Menu naming</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright, akufadhl, 2022</string>
+	<string>Copyright, Fadhl Haqq, 2022</string>
 	<key>NSPrincipalClass</key>
 	<string>showRSB</string>
 	<key>PyMainFileNames</key>
