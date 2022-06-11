@@ -49,7 +49,8 @@ class showRSB(ReporterPlugin):
 		path.moveToPoint_(NSPoint(x1, y1))
 		path.lineToPoint_(NSPoint(x2, y2))
 		path.setLineWidth_(strokeWidth)
-		NSColor.separatorColor().colorWithAlphaComponent_(0.4).set()
+		# NSColor.separatorColor().colorWithAlphaComponent_(0.4).set()
+		NSColor.keyboardFocusIndicatorColor().set()
 		path.stroke()
 
 	@objc.python_method
