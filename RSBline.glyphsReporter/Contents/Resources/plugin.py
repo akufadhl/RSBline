@@ -60,7 +60,8 @@ class showRSB(ReporterPlugin):
 		path.lineToPoint_(NSPoint(x2, y2))
 		path.lineToPoint_(NSPoint(x3, y3))
 		path.closePath()
-		NSColor.controlAccentColor().colorWithAlphaComponent_(0.4).set()
+		# NSColor.controlAccentColor().colorWithAlphaComponent_(0.4).set()
+		NSColor.keyboardFocusIndicatorColor().set()
 		path.fill()
 	
 	@objc.python_method
@@ -88,12 +89,12 @@ class showRSB(ReporterPlugin):
 			)
 		
 		# triangle:
-		# triangleSize = 10.0 / self.getScale() # ** -0.9
-		# self.drawTriangle(
-		# 	x1-triangleSize + self.italicShift(y1, angle, xHeight), y1,
-		# 	x1 + self.italicShift(y1-triangleSize, angle, xHeight), (y1-triangleSize),
-		# 	x1+triangleSize + self.italicShift(y1, angle, xHeight), y1,
-		# 	)
+		triangleSize = 10.0 / self.getScale()  ** 1
+		self.drawTriangle(
+			x1/2-triangleSize + self.italicShift(y2, angle, xHeight), y2,
+			x1/2 + self.italicShift(y2+triangleSize, angle, xHeight), (y2+triangleSize),
+			x1/2+triangleSize + self.italicShift(y2, angle, xHeight), y2,
+			)
 	
 	@objc.python_method
 	def background(self, layer):
