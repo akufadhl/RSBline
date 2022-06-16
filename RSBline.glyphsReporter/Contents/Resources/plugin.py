@@ -60,7 +60,7 @@ class showRSB(ReporterPlugin):
 		path.lineToPoint_(NSPoint(x2, y2))
 		path.lineToPoint_(NSPoint(x3, y3))
 		path.closePath()
-		NSColor.redColor().colorWithAlphaComponent_(0.4).set()
+		NSColor.systemRedColor().colorWithAlphaComponent_(0.4).set()
 		# NSColor.keyboardFocusIndicatorColor().set()
 		path.fill()
 	
