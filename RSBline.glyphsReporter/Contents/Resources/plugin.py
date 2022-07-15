@@ -76,6 +76,7 @@ class showRSB(ReporterPlugin):
 	@objc.python_method
 	def drawRSB(self, layer):
 		angle = layer.italicAngle
+
 		xHeight = layer.master.xHeight
 		x1, y1 = layer.width, layer.ascender
 		x2, y2 = x1, layer.descender
@@ -97,9 +98,38 @@ class showRSB(ReporterPlugin):
 			)
 	
 	@objc.python_method
+	def drawLSB(self, layer):
+		angle = layer.italicAngle
+
+		xHeight = layer.master.xHeight
+		x1, y1 = 0, layer.ascender
+		x2, y2 = x1, layer.descender
+		
+		# draw line:
+		strokeWidth = 1.0 * self.getScale() ** -0.9
+		self.drawLine( 
+			x1 + self.italicShift(y1, angle, xHeight), y1 , 
+			x2 + self.italicShift(y2, angle, xHeight), y2, 
+			strokeWidth,
+			)
+		
+		# triangle:
+		triangleSize = 10.0 / self.getScale()  ** 1
+		self.drawTriangle(
+			layer.width/2-triangleSize + self.italicShift(y2, angle, xHeight), y2,
+			layer.width/2 + self.italicShift(y2+triangleSize, angle, xHeight), (y2+triangleSize),
+			layer.width/2+triangleSize + self.italicShift(y2, angle, xHeight), y2,
+			)
+
+	@objc.python_method
 	def background(self, layer):
+		currentTab = layer.parent.parent.currentTab
+
 		if self.conditionsAreMetForDrawing():
-			self.drawRSB(layer)
+			if currentTab.direction == 0 :
+				self.drawRSB(layer)
+			if currentTab.direction == 2 :
+				self.drawLSB(layer)
 
 	@objc.python_method
 	def __file__(self):
